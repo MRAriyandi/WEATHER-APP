@@ -1,13 +1,10 @@
-const apiKey = "";
-const apiUrl = "";
-
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
 async function checkWeather(city) {
     const response = await fetch(
-    `http://localhost:3000/api/weather?city=${encodeURIComponent(city)}`
+        `https://weather-app-omega-five-15.vercel.app/api/weather?city=${encodeURIComponent(city)}`
     );
 
     if(response.status == 404){
