@@ -1,6 +1,6 @@
-@"
 .env
 .env.*
 !.env.example
 node_modules/
-"@ | Set-Content .gitignore
+backend/.env
+backend/node_modules/

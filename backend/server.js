@@ -11,8 +11,6 @@ const app = express();
 
 app.use(cors());
 
-const PORT = process.env.PORT || 3000;
-
 app.get("/api/weather", async (req, res) => {
     try {
         const city = req.query.city;
@@ -45,7 +43,5 @@ app.get("/api/weather", async (req, res) => {
     }
 });
 
-// Cukup SATU app.listen()
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Backend berjalan di port ${PORT}`);
-});
+// Untuk Vercel
+module.exports = app;
