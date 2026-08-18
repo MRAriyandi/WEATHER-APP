@@ -11,7 +11,7 @@ const app = express();
 
 app.use(cors());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.get("/api/weather", async (req, res) => {
     try {
@@ -45,6 +45,7 @@ app.get("/api/weather", async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Backend berjalan di http://localhost:${PORT}`);
+// Cukup SATU app.listen()
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Backend berjalan di port ${PORT}`);
 });
